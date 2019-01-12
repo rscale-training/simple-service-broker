@@ -51,6 +51,9 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/pivotal-cf/brokerapi"]
+  input-imports = [
+    "code.cloudfoundry.org/lager",
+    "github.com/pivotal-cf/brokerapi",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
