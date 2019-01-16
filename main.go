@@ -19,7 +19,10 @@ func main() {
 	logger.RegisterSink(lager.NewWriterSink(os.Stdout, lager.INFO))
 	logger.RegisterSink(lager.NewWriterSink(os.Stderr, lager.ERROR))
 
-	servicebroker := &broker.SimpleBroker{}
+	servicebroker := &broker.SimpleBroker{
+		Instances: map[string]brokerapi.GetInstanceDetailsSpec{},
+		Bindings:  map[string]brokerapi.GetBindingSpec{},
+	}
 
 	brokerCredentials := brokerapi.BrokerCredentials{
 		Username: "admin",
